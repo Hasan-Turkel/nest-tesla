@@ -8,7 +8,6 @@ export class UsersService {
 
     constructor(@InjectModel(User.name) private UserModel : Model<UserDocument>) {}
 
-  private readonly users=[]
 
     async findAll() {
         return await this.UserModel.find()
