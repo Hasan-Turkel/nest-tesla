@@ -2,6 +2,7 @@ import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { User, UserDocument } from '../users/users.schema';
 import { Model } from 'mongoose';
+import { encodePassword } from 'src/utils/bcrypt';
 
 @Injectable()
 export class AuthService {
@@ -10,7 +11,7 @@ export class AuthService {
 
     async login(email, password) {
         const user = await this.UserModel.findOne({email:email});
-        if (user?.password !== password) {
+        if (user?.password !== encodePassword(password)) {
             throw new UnauthorizedException();
           }
           return user; }
