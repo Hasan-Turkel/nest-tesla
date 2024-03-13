@@ -5,9 +5,10 @@ import { UsersModule } from './users/users.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { TokensModule } from './tokens/tokens.module';
 import { AuthModule } from './auth/auth.module';
+import { CarsModule } from './cars/cars.module';
 
 @Module({
-  imports: [UsersModule,TokensModule, AuthModule, MongooseModule.forRoot('mongodb://localhost:27017/tesla',  {
+  imports: [UsersModule,TokensModule, AuthModule, CarsModule, MongooseModule.forRoot('mongodb://localhost:27017/tesla',  {
     autoIndex: true,
   })],
   controllers: [AppController],

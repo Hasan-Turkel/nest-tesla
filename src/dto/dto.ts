@@ -18,3 +18,16 @@ user_id:string
 token:string
 
 }
+export class CreateCarDto{
+
+carname:string
+model:[{modelname:string, price:number}]
+range:number
+topspeed:number
+mph:number
+paint:[{paintname:string, price:number}]
+wheels:[{wheelname:string, price:number}]
+interior:[{interiorname:string, price:number}]
+steering:[{steeringname:string, price:number}]
+extras:any
+}

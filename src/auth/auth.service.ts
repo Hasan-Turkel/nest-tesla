@@ -17,7 +17,8 @@ export class AuthService {
           return user; }
 
     async register(user) {
-            const newUser = new this.UserModel(user)
+        const password = encodePassword(user.password)
+        const newUser = new this.UserModel({...user, password})
             return await newUser.save() }
  
 }
