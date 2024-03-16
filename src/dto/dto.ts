@@ -18,6 +18,13 @@ user_id:string
 token:string
 
 }
+export class CreateExtraDto{
+
+    extraname:string;
+    choice:[{choicename:string, price:number}];
+
+}
+
 export class CreateCarDto{
 
 carname:string
