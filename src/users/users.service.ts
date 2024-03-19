@@ -3,6 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { User, UserDocument } from './users.schema';
 import { Model } from 'mongoose';
 import { encodePassword } from 'src/utils/bcrypt';
+import { log } from 'console';
 
 @Injectable()
 export class UsersService {
@@ -23,8 +24,23 @@ export class UsersService {
         return await newUser.save()
     }
     async update(id, user) {
+
+
+        console.log(user);
+        
+        if(user.order){
+            const currentUser = await this.UserModel.findById(id);
+            const userorders = currentUser.userorders
+            userorders.push(user.order)
+
+            console.log({...currentUser, userorders:userorders});
+            
+            return await this.UserModel.findByIdAndUpdate(id, {userorders:userorders}, {new:true})
+        }else {console.log(user);
+        
+            return await this.UserModel.findByIdAndUpdate(id, user, {new:true})}
          
-        return await this.UserModel.findByIdAndUpdate(id, user, {new:true})
+        
     }
     async delete(id) {
          

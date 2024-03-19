@@ -7,7 +7,7 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { CreateUserDto } from 'src/dto/dto';
+import { CreateUserDto, SendOrderDto } from 'src/dto/dto';
 import { UsersService } from './users.service';
 import { User } from './users.schema';
 
@@ -30,7 +30,7 @@ export class UsersController {
     return this.UsersService.create(user);
   }
   @Put(':id')
-  update(@Param('id') id, @Body() user: CreateUserDto): Promise<User> {
+  update(@Param('id') id, @Body() user:any): Promise<User> {
     return this.UsersService.update(id, user);
   }
   @Delete(':id')

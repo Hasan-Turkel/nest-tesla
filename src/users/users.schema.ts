@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
-import { HydratedDocument } from "mongoose";
+import mongoose, { HydratedDocument } from "mongoose";
 
 export type UserDocument = HydratedDocument<User>
 
@@ -31,6 +31,9 @@ export class User {
         index: true,
         type:String})
     password:string
+
+    @Prop({type: mongoose.Schema.Types.Mixed})
+    userorders:any
 }
 
 export const UserSchema = SchemaFactory.createForClass(User)

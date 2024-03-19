@@ -20,18 +20,17 @@ export class Car {
         trim: true,
         required: true,
         unique: true,
-        type:[{modelname:String, price:Number}]
+        type:String
     })
-    model:[{modelname:string, price:number}];
+    carimg:string;
 
-    @Prop()
-    range:number
-
-    @Prop()
-    topspeed:number
-
-    @Prop()
-    mph:number
+    @Prop({
+        trim: true,
+        required: true,
+        unique: true,
+        type:[{modelname:String, property:String, price:Number, range:Number, topspeed:Number, mph:Number}]
+    })
+    model:[{modelname:string, property:string, price:number, range:number, topspeed:number, mph:number}];
 
     @Prop()
     paint:[{paintname:string, price:number}]

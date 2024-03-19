@@ -10,6 +10,8 @@ password:string
 @IsEmail()
 email:string
 
+userorders:[]
+
 }
 
 export class CreateTokenDto{
@@ -28,13 +30,15 @@ export class CreateExtraDto{
 export class CreateCarDto{
 
 carname:string
-model:[{modelname:string, price:number}]
-range:number
-topspeed:number
-mph:number
+carimg:string;
+model:[{modelname:string, property:string, price:number, range:number, topspeed:number, mph:number}]
 paint:[{paintname:string, price:number}]
 wheels:[{wheelname:string, price:number}]
 interior:[{interiorname:string, price:number}]
 steering:[{steeringname:string, price:number}]
 extras:any
+}
+export class SendOrderDto{
+
+order:any
 }
