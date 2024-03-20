@@ -23,9 +23,6 @@ export class AuthService {
               token: encodePassword(user._id + Date.now().toString())
           })
 
-          
-
-
           return  {user, token: tokenData.token,
           }}
 

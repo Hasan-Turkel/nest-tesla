@@ -3,6 +3,7 @@ import {
   Controller,
   Delete,
   Get,
+  Headers,
   Param,
   Post,
   Put,
@@ -30,8 +31,8 @@ export class UsersController {
     return this.UsersService.create(user);
   }
   @Put(':id')
-  update(@Param('id') id, @Body() user:any): Promise<User> {
-    return this.UsersService.update(id, user);
+  update(@Param('id') id, @Body() user:any, @Headers('Authorization') Authorization): Promise<User> {
+    return this.UsersService.update(id, user, Authorization);
   }
   @Delete(':id')
   delete(@Param('id') id): Promise<User> {
