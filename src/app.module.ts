@@ -9,7 +9,7 @@ import { CarsModule } from './cars/cars.module';
 import { ExtrasModule } from './extras/extras.module';
 
 @Module({
-  imports: [UsersModule,TokensModule, AuthModule, CarsModule, ExtrasModule, MongooseModule.forRoot('mongodb://localhost:27017/tesla',  {
+  imports: [UsersModule,TokensModule, AuthModule, CarsModule, ExtrasModule, TokensModule, MongooseModule.forRoot('mongodb://localhost:27017/tesla',  {
     autoIndex: true,
   })],
   controllers: [AppController],

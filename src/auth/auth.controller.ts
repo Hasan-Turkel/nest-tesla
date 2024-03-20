@@ -19,12 +19,12 @@ export class AuthController {
 
   
   @Post('login')
-  create(@Body() user: CreateUserDto): Promise<User> {
+  create(@Body() user: CreateUserDto) {
     return this.AuthService.login(user.email, user.password);
   }
 
   @Post('register')
-  register(@Body() user: CreateUserDto): Promise<User> {
+  register(@Body() user: CreateUserDto) {
     return this.AuthService.register(user);
   }
 
