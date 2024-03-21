@@ -28,10 +28,10 @@ export class AuthService {
 
     async register(user) {
         const password = encodePassword(user.password)
-        const newUser = new this.UserModel({...user, password})
+        const newUser = await this.UserModel.create({...user, password});
        const tokenData = await this.TokenModel.create({
             user_id: user._id,
-            token: encodePassword(+user._id + Date.now())
+            token: encodePassword(user._id + Date.now().toString())
         })
             return {newUser, token:tokenData} }
 
