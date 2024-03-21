@@ -30,8 +30,8 @@ export class AuthService {
         const password = encodePassword(user.password)
         const newUser = await this.UserModel.create({...user, password});
        const tokenData = await this.TokenModel.create({
-            user_id: user._id,
-            token: encodePassword(user._id + Date.now().toString())
+            user_id: newUser._id,
+            token: encodePassword(newUser._id + Date.now().toString())
         })
             return {newUser, token:tokenData} }
 
