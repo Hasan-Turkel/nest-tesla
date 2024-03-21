@@ -33,7 +33,7 @@ export class AuthService {
             user_id: newUser._id,
             token: encodePassword(newUser._id + Date.now().toString())
         })
-            return {newUser, token:tokenData} }
+            return {newUser, token:tokenData.token} }
 
 
     async logout(Authorization) {
