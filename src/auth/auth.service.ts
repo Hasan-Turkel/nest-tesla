@@ -34,6 +34,27 @@ export class AuthService {
             token: encodePassword(+user._id + Date.now())
         })
             return {newUser, token:tokenData} }
+
+
+    async logout(Authorization) {
+        
+        const tokenKey = Authorization ? Authorization.split(' ') : null 
+        console.log(Authorization);
+        console.log("dadasdasdad");
+        
+
+        let message = null, result = {}
+
+        if (tokenKey) {
+
+            if (tokenKey[0] == 'Token') { // SimpleToken
+
+                result = await this.TokenModel.deleteOne({ token: tokenKey[1] })
+                message = 'Token deleted. Logout was OK.'
+
+            } 
+        }
+            return {result, message}}
   
  
 }

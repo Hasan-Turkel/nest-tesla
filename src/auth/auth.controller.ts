@@ -3,6 +3,7 @@ import {
   Controller,
   Delete,
   Get,
+  Headers,
   HttpCode,
   HttpStatus,
   Param,
@@ -26,6 +27,10 @@ export class AuthController {
   @Post('register')
   register(@Body() user: CreateUserDto) {
     return this.AuthService.register(user);
+  }
+  @Post('logout')
+  logout( @Headers('Authorization') Authorization) {
+    return this.AuthService.logout(Authorization);
   }
 
 }
