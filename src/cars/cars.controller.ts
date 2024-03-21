@@ -7,7 +7,7 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { CreateCarDto } from 'src/dtos/dto';
+import { CreateCarDto } from '../dtos/dto';
 import { CarsService } from './cars.service';
 import { Car } from './cars.schema';
 

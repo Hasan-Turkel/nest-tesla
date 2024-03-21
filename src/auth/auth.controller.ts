@@ -10,8 +10,7 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { CreateUserDto } from 'src/dtos/dto';
-import { User } from '../users/users.schema';
+import { CreateUserDto } from '../dtos/dto';
 import { AuthService } from './auth.service';
 
 @Controller('auth')

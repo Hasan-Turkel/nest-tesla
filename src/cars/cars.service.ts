@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Car, CarDocument } from './cars.schema';
 import { Model } from 'mongoose';
-import { encodePassword } from 'src/utils/bcrypt';
 
 @Injectable()
 export class CarsService {

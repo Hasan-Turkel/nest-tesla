@@ -8,7 +8,7 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { CreateUserDto, SendOrderDto } from 'src/dtos/dto';
+import { CreateUserDto, SendOrderDto } from '../dtos/dto';
 import { UsersService } from './users.service';
 import { User } from './users.schema';
 

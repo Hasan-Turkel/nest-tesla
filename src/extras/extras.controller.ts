@@ -7,7 +7,7 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { CreateExtraDto } from 'src/dtos/dto';
+import { CreateExtraDto } from '../dtos/dto';
 import { ExtrasService } from './extras.service';
 import { Extra } from './extras.schema';
 
