@@ -10,7 +10,7 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { CreateUserDto } from 'src/dto/dto';
+import { CreateUserDto } from 'src/dtos/dto';
 import { User } from '../users/users.schema';
 import { AuthService } from './auth.service';
 
@@ -18,7 +18,6 @@ import { AuthService } from './auth.service';
 export class AuthController {
   constructor(private AuthService: AuthService) {}
 
-  
   @Post('login')
   create(@Body() user: CreateUserDto) {
     return this.AuthService.login(user.email, user.password);
@@ -29,8 +28,7 @@ export class AuthController {
     return this.AuthService.register(user);
   }
   @Post('logout')
-  logout( @Headers('Authorization') Authorization) {
+  logout(@Headers('Authorization') Authorization) {
     return this.AuthService.logout(Authorization);
   }
-
 }

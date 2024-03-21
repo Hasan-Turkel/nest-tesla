@@ -7,7 +7,7 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { CreateTokenDto } from 'src/dto/dto';
+import { CreateTokenDto } from 'src/dtos/dto';
 import { TokensService } from './tokens.service';
 import { Token } from './tokens.schema';
 
